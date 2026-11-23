@@ -1,10 +1,10 @@
 {
   "name": "motyv",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Ukrainian case law (Supreme Court and appellate legal positions, courts and judges), legislation and counterparty checks — Motyv",
   "author": { "name": "Motyv", "url": "https://motyv.ai" },
   "homepage": "https://motyv.ai",
-  "repository": "https://github.com/Motyv-ai/claude-plugin",
+  "repository": "https://github.com/Motyv-ai/motyv",
   "license": "MIT",
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",

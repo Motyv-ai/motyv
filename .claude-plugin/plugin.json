@@ -1,13 +1,13 @@
 {
   "name": "motyv",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Судова практика України (позиції ВС і апеляції, суди й судді), законодавство і перевірка контрагентів — Motyv у Claude Code",
   "author": {
     "name": "Motyv",
     "url": "https://motyv.ai"
   },
   "homepage": "https://motyv.ai",
-  "repository": "https://github.com/Motyv-ai/claude-plugin",
+  "repository": "https://github.com/Motyv-ai/motyv",
   "license": "MIT",
   "keywords": [
     "ukraine",

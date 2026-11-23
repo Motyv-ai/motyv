@@ -1,4 +1,4 @@
-# Motyv для Claude Code, Gemini CLI, Antigravity CLI і ChatGPT/Codex
+# Motyv — плагін для Claude Code, Gemini CLI, Antigravity CLI і ChatGPT/Codex
 
 Плагін підключає [Motyv](https://motyv.ai) до Claude Code: судова практика України
 (правові позиції Верховного Суду й апеляції з цитатами, рішення всіх судів із реєстру,
@@ -8,11 +8,11 @@
 ## Встановлення
 
 ```bash
-claude plugin marketplace add Motyv-ai/claude-plugin
+claude plugin marketplace add Motyv-ai/motyv
 claude plugin install motyv@motyv
 ```
 
-або в самому Claude Code: `/plugin` → **Add marketplace** → `Motyv-ai/claude-plugin`.
+або в самому Claude Code: `/plugin` → **Add marketplace** → `Motyv-ai/motyv`.
 
 Під час першого звернення до Motyv відкриється браузер для входу у ваш акаунт Motyv
 (OAuth). Паролів і ключів плагін не зберігає. Потрібен акаунт на [motyv.ai](https://motyv.ai) —
@@ -21,7 +21,7 @@ claude plugin install motyv@motyv
 ## Gemini CLI
 
 ```bash
-gemini extensions install https://github.com/Motyv-ai/claude-plugin
+gemini extensions install https://github.com/Motyv-ai/motyv
 ```
 
 Розширення (`gemini-extension.json`) підключає той самий MCP-сервер і скіл `skills/motyv`.
@@ -30,7 +30,7 @@ gemini extensions install https://github.com/Motyv-ai/claude-plugin
 ## Antigravity CLI
 
 ```bash
-agy plugin install https://github.com/Motyv-ai/claude-plugin
+agy plugin install https://github.com/Motyv-ai/motyv
 ```
 
 Плагін (`.antigravity-plugin/plugin.json` + `mcp.json`) підключає той самий MCP-сервер і скіл.
