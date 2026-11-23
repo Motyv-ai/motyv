@@ -1,6 +1,6 @@
 {
   "name": "motyv",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Ukrainian case law (Supreme Court and appellate legal positions, courts and judges), legislation and counterparty checks — Motyv",
   "author": {
     "name": "Motyv",
@@ -14,7 +14,7 @@
   "interface": {
     "displayName": "Motyv",
     "shortDescription": "Ukrainian case law and laws",
-    "longDescription": "Motyv is a legal research service for Ukrainian lawyers. The plugin connects ChatGPT to the Motyv database: legal positions of the Supreme Court of Ukraine and appellate courts with verbatim quotes and case numbers, full texts of court decisions from the Unified State Register of Court Decisions, judge and court practice statistics, Ukrainian legislation from the Verkhovna Rada (articles, editions, practice by article), official explanations of government bodies, ECHR judgments against Ukraine, and counterparty checks (Unified State Register of companies, court cases, debtors, sanctions). Every statement about case law comes with the case number and date; when nothing is found the answer says so instead of inventing practice. Requires a Motyv account (sign in with OAuth; free trial available at motyv.ai).",
+    "longDescription": "Motyv is a legal research service for Ukrainian lawyers. The plugin connects ChatGPT to the Motyv database: legal positions of the Supreme Court of Ukraine and appellate courts with verbatim quotes and case numbers, full texts of court decisions from the Unified State Register of Court Decisions, judge and court practice statistics, Ukrainian legislation from the Verkhovna Rada (articles, editions, practice by article), official explanations of government bodies, ECHR judgments against Ukraine, and counterparty checks (Unified State Register of companies, court cases, debtors, sanctions). Every statement about case law comes with the case number and date; when nothing is found the answer says so instead of inventing practice. Requires a Motyv account; sign in with OAuth.",
     "developerName": "Motyv",
     "category": "Productivity",
     "capabilities": [
@@ -90,6 +90,14 @@
           ]
         },
         "demo_recording_url": "https://motyv.ai/plugin-demo/"
+      },
+      "publication": {
+        "translations": {
+          "uk-UA": {
+            "subtitle": "Судова практика і закони України",
+            "description": "Motyv — сервіс правових досліджень для українських юристів. Плагін підключає ChatGPT до бази Motyv: правові позиції Верховного Суду й апеляційних судів із дослівними цитатами та номерами справ, повні тексти рішень з ЄДРСР, статистика практики суддів і судів, законодавство Верховної Ради (статті, редакції, практика за статтею), роз'яснення органів влади, рішення ЄСПЛ щодо України та перевірка контрагентів (ЄДР, судові справи, боржники, санкції). Кожне твердження про практику — з номером справи й датою; якщо нічого не знайдено, відповідь так і каже, а не вигадує практику. Потрібен акаунт Motyv, вхід через OAuth."
+          }
+        }
       }
     }
   }
