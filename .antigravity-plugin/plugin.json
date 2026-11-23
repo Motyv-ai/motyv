@@ -2,7 +2,7 @@
   "$schema": "https://antigravity.google/schemas/v1/plugin.json",
   "name": "motyv",
   "displayName": "Motyv",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "Судова практика України (позиції ВС і апеляції, суди й судді), законодавство і перевірка контрагентів — Motyv",
   "logo": "assets/logo.png",
   "suggestedPrompts": [
