@@ -1,6 +1,6 @@
 {
   "name": "motyv",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Ukrainian case law (Supreme Court and appellate legal positions, courts and judges), legislation and counterparty checks — Motyv",
   "author": {
     "name": "Motyv",
@@ -41,52 +41,55 @@
   "extensions": {
     "com.openai": {
       "review": {
-        "test_cases": [
-          {
-            "description": "Supreme Court positions on a civil-law question",
-            "prompt": "Що каже Верховний Суд про 3 % річних за ст. 625 ЦК, коли державний орган прострочив оплату?",
-            "tools_triggered": "search_positions",
-            "expected_behavior": "Returns Supreme Court legal positions on Article 625 of the Civil Code with case numbers, dates and verbatim quotes; states the search verdict. The answer is in Ukrainian."
-          },
-          {
-            "description": "Read a statute article",
-            "prompt": "Покажи текст статті 43 ЦПК України.",
-            "tools_triggered": "search_law, law_text",
-            "expected_behavior": "Finds the Civil Procedure Code and quotes Article 43 verbatim from the Verkhovna Rada text, with the act's edition. The answer is in Ukrainian."
-          },
-          {
-            "description": "Judge lookup",
-            "prompt": "Знайди суддів Печерського районного суду міста Києва і покажи статистику одного з них.",
-            "tools_triggered": "judge_search, judge_card",
-            "expected_behavior": "Lists judges of the Pecherskyi District Court of Kyiv and shows a judge card with outcome statistics and the number of analysed decisions. The answer is in Ukrainian."
-          },
-          {
-            "description": "Counterparty check by company code",
-            "prompt": "Перевір компанію з кодом ЄДРПОУ 00032129: статус, керівник і судові справи.",
-            "tools_triggered": "company_search, company_card",
-            "expected_behavior": "Returns the company's register record (name, status, address, director) and a summary of court cases where it appears by name. The answer is in Ukrainian."
-          },
-          {
-            "description": "Verbatim phrase in full texts",
-            "prompt": "Знайди постанови ВС з дослівною фразою «принцип належного урядування» з 2022 року.",
-            "tools_triggered": "verbatim_search",
-            "expected_behavior": "Returns Supreme Court decisions containing the exact phrase, sorted by date, each with case number, date and a highlighted snippet. The answer is in Ukrainian."
-          }
-        ],
-        "negative_test_cases": [
-          {
-            "description": "Out of scope: non-Ukrainian law",
-            "prompt": "Який строк позовної давності за порушення договору в Каліфорнії?"
-          },
-          {
-            "description": "Out of scope: unrelated task",
-            "prompt": "Забронюй мені столик у ресторані на двох на сьогодні."
-          },
-          {
-            "description": "Unsupported action: filing with a court",
-            "prompt": "Подай мій позов до суду в електронному вигляді."
-          }
-        ]
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Supreme Court positions on a civil-law question",
+              "prompt": "Що каже Верховний Суд про 3 % річних за ст. 625 ЦК, коли державний орган прострочив оплату?",
+              "tools_triggered": "search_positions",
+              "expected_behavior": "Returns Supreme Court legal positions on Article 625 of the Civil Code with case numbers, dates and verbatim quotes; states the search verdict. The answer is in Ukrainian."
+            },
+            {
+              "description": "Read a statute article",
+              "prompt": "Покажи текст статті 43 ЦПК України.",
+              "tools_triggered": "search_law, law_text",
+              "expected_behavior": "Finds the Civil Procedure Code and quotes Article 43 verbatim from the Verkhovna Rada text, with the act's edition. The answer is in Ukrainian."
+            },
+            {
+              "description": "Judge lookup",
+              "prompt": "Знайди суддів Печерського районного суду міста Києва і покажи статистику одного з них.",
+              "tools_triggered": "judge_search, judge_card",
+              "expected_behavior": "Lists judges of the Pecherskyi District Court of Kyiv and shows a judge card with outcome statistics and the number of analysed decisions. The answer is in Ukrainian."
+            },
+            {
+              "description": "Counterparty check by company code",
+              "prompt": "Перевір компанію з кодом ЄДРПОУ 00032129: статус, керівник і судові справи.",
+              "tools_triggered": "company_search, company_card",
+              "expected_behavior": "Returns the company's register record (name, status, address, director) and a summary of court cases where it appears by name. The answer is in Ukrainian."
+            },
+            {
+              "description": "Verbatim phrase in full texts",
+              "prompt": "Знайди постанови ВС з дослівною фразою «принцип належного урядування» з 2022 року.",
+              "tools_triggered": "verbatim_search",
+              "expected_behavior": "Returns Supreme Court decisions containing the exact phrase, sorted by date, each with case number, date and a highlighted snippet. The answer is in Ukrainian."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Out of scope: non-Ukrainian law. Motyv covers only Ukrainian case law and legislation, so the plugin should not be called; ChatGPT answers on its own or says Motyv has no data on California law.",
+              "prompt": "Який строк позовної давності за порушення договору в Каліфорнії?"
+            },
+            {
+              "description": "Out of scope: unrelated task. Restaurant booking has nothing to do with legal research, so no Motyv tool should be called.",
+              "prompt": "Забронюй мені столик у ресторані на двох на сьогодні."
+            },
+            {
+              "description": "Unsupported action: Motyv is read-only research and cannot file documents with a court; the plugin should not act and the answer should say filing is not supported.",
+              "prompt": "Подай мій позов до суду в електронному вигляді."
+            }
+          ]
+        },
+        "demo_recording_url": "https://motyv.ai/plugin-demo/"
       }
     }
   }
