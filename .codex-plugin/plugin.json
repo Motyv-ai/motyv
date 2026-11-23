@@ -1,8 +1,11 @@
 {
   "name": "motyv",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Ukrainian case law (Supreme Court and appellate legal positions, courts and judges), legislation and counterparty checks — Motyv",
-  "author": { "name": "Motyv", "url": "https://motyv.ai" },
+  "author": {
+    "name": "Motyv",
+    "url": "https://motyv.ai"
+  },
   "homepage": "https://motyv.ai",
   "repository": "https://github.com/Motyv-ai/motyv",
   "license": "MIT",
@@ -41,47 +44,47 @@
         "test_cases": [
           {
             "description": "Supreme Court positions on a civil-law question",
-            "prompt": "What does the Supreme Court of Ukraine say about 3% annual interest under Article 625 of the Civil Code when a state body pays late?",
+            "prompt": "Що каже Верховний Суд про 3 % річних за ст. 625 ЦК, коли державний орган прострочив оплату?",
             "tools_triggered": "search_positions",
-            "expected_behavior": "Returns Supreme Court legal positions on Article 625 of the Civil Code with case numbers, dates and verbatim quotes; states the search verdict."
+            "expected_behavior": "Returns Supreme Court legal positions on Article 625 of the Civil Code with case numbers, dates and verbatim quotes; states the search verdict. The answer is in Ukrainian."
           },
           {
             "description": "Read a statute article",
-            "prompt": "Show me the text of Article 43 of the Civil Procedure Code of Ukraine.",
+            "prompt": "Покажи текст статті 43 ЦПК України.",
             "tools_triggered": "search_law, law_text",
-            "expected_behavior": "Finds the Civil Procedure Code and quotes Article 43 verbatim from the Verkhovna Rada text, with the act's edition."
+            "expected_behavior": "Finds the Civil Procedure Code and quotes Article 43 verbatim from the Verkhovna Rada text, with the act's edition. The answer is in Ukrainian."
           },
           {
             "description": "Judge lookup",
-            "prompt": "Find judges of the Pecherskyi District Court of Kyiv and show statistics for one of them.",
+            "prompt": "Знайди суддів Печерського районного суду міста Києва і покажи статистику одного з них.",
             "tools_triggered": "judge_search, judge_card",
-            "expected_behavior": "Lists judges of the Pecherskyi District Court of Kyiv and shows a judge card with outcome statistics and the number of analysed decisions."
+            "expected_behavior": "Lists judges of the Pecherskyi District Court of Kyiv and shows a judge card with outcome statistics and the number of analysed decisions. The answer is in Ukrainian."
           },
           {
             "description": "Counterparty check by company code",
-            "prompt": "Check the Ukrainian company with EDRPOU code 00032129: status, director and court cases.",
+            "prompt": "Перевір компанію з кодом ЄДРПОУ 00032129: статус, керівник і судові справи.",
             "tools_triggered": "company_search, company_card",
-            "expected_behavior": "Returns the company's register record (name, status, address, director) and a summary of court cases where it appears by name."
+            "expected_behavior": "Returns the company's register record (name, status, address, director) and a summary of court cases where it appears by name. The answer is in Ukrainian."
           },
           {
             "description": "Verbatim phrase in full texts",
-            "prompt": "Find Supreme Court decisions that contain the exact phrase \"принцип належного урядування\" since 2022.",
+            "prompt": "Знайди постанови ВС з дослівною фразою «принцип належного урядування» з 2022 року.",
             "tools_triggered": "verbatim_search",
-            "expected_behavior": "Returns Supreme Court decisions containing the exact phrase, sorted by date, each with case number, date and a highlighted snippet."
+            "expected_behavior": "Returns Supreme Court decisions containing the exact phrase, sorted by date, each with case number, date and a highlighted snippet. The answer is in Ukrainian."
           }
         ],
         "negative_test_cases": [
           {
             "description": "Out of scope: non-Ukrainian law",
-            "prompt": "What is the statute of limitations for breach of contract in California?"
+            "prompt": "Який строк позовної давності за порушення договору в Каліфорнії?"
           },
           {
             "description": "Out of scope: unrelated task",
-            "prompt": "Book me a table for two in a restaurant tonight."
+            "prompt": "Забронюй мені столик у ресторані на двох на сьогодні."
           },
           {
             "description": "Unsupported action: filing with a court",
-            "prompt": "File my lawsuit with the court electronically."
+            "prompt": "Подай мій позов до суду в електронному вигляді."
           }
         ]
       }
