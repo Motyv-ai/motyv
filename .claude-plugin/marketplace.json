@@ -1,0 +1,14 @@
+{
+  "name": "motyv",
+  "owner": { "name": "Motyv", "url": "https://motyv.ai" },
+  "metadata": { "description": "Плагіни Motyv для Claude Code" },
+  "plugins": [
+    {
+      "name": "motyv",
+      "source": "./",
+      "description": "Судова практика України, законодавство і перевірка контрагентів",
+      "category": "legal",
+      "homepage": "https://motyv.ai"
+    }
+  ]
+}
