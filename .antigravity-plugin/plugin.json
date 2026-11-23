@@ -1,0 +1,18 @@
+{
+  "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+  "name": "motyv",
+  "displayName": "Motyv",
+  "version": "1.2.0",
+  "description": "Судова практика України (позиції ВС і апеляції, суди й судді), законодавство і перевірка контрагентів — Motyv",
+  "logo": "assets/logo.png",
+  "suggestedPrompts": [
+    "Знайди практику ВС щодо 3 % річних за ст. 625 ЦК",
+    "Прочитай ст. 43 ЦПК і дай практику до неї",
+    "Перевір контрагента за кодом ЄДРПОУ"
+  ],
+  "author": { "name": "Motyv", "email": "support@motyv.ai", "url": "https://motyv.ai" },
+  "homepage": "https://motyv.ai",
+  "repository": "https://github.com/Motyv-ai/claude-plugin",
+  "license": "MIT",
+  "keywords": ["ukraine", "law", "legal", "court", "supreme-court", "mcp"]
+}
