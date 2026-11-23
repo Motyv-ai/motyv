@@ -1,0 +1,11 @@
+{
+  "name": "motyv",
+  "version": "1.0.0",
+  "description": "Судова практика України (позиції ВС і апеляції, суди й судді), законодавство і перевірка контрагентів — Motyv",
+  "mcpServers": {
+    "motyv": {
+      "type": "http",
+      "url": "https://mcp.motyv.ai/mcp"
+    }
+  }
+}

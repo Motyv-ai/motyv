@@ -1,0 +1,90 @@
+{
+  "name": "motyv",
+  "version": "1.0.0",
+  "description": "Ukrainian case law (Supreme Court and appellate legal positions, courts and judges), legislation and counterparty checks — Motyv",
+  "author": { "name": "Motyv", "url": "https://motyv.ai" },
+  "homepage": "https://motyv.ai",
+  "repository": "https://github.com/Motyv-ai/claude-plugin",
+  "license": "MIT",
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Motyv",
+    "shortDescription": "Ukrainian case law and laws",
+    "longDescription": "Motyv is a legal research service for Ukrainian lawyers. The plugin connects ChatGPT to the Motyv database: legal positions of the Supreme Court of Ukraine and appellate courts with verbatim quotes and case numbers, full texts of court decisions from the Unified State Register of Court Decisions, judge and court practice statistics, Ukrainian legislation from the Verkhovna Rada (articles, editions, practice by article), official explanations of government bodies, ECHR judgments against Ukraine, and counterparty checks (Unified State Register of companies, court cases, debtors, sanctions). Every statement about case law comes with the case number and date; when nothing is found the answer says so instead of inventing practice. Requires a Motyv account (sign in with OAuth; free trial available at motyv.ai).",
+    "developerName": "Motyv",
+    "category": "Productivity",
+    "capabilities": [
+      "Search Supreme Court legal positions",
+      "Read court decisions",
+      "Search Ukrainian legislation",
+      "Judge and court practice",
+      "Counterparty checks"
+    ],
+    "websiteURL": "https://motyv.ai",
+    "supportURL": "https://t.me/motyv_supportbot",
+    "privacyPolicyURL": "https://motyv.ai/konfidentsiinist/",
+    "termsOfServiceURL": "https://motyv.ai/oferta/",
+    "defaultPrompt": [
+      "Знайди практику ВС щодо 3 % річних за ст. 625 ЦК",
+      "Прочитай ст. 43 ЦПК і дай практику до неї",
+      "Перевір контрагента за кодом ЄДРПОУ"
+    ],
+    "brandColor": "#2C9AFF",
+    "brandColorDark": "#2C9AFF",
+    "logo": "./assets/logo.png",
+    "composerIcon": "./assets/icon.png"
+  },
+  "extensions": {
+    "com.openai": {
+      "review": {
+        "test_cases": [
+          {
+            "description": "Supreme Court positions on a civil-law question",
+            "prompt": "What does the Supreme Court of Ukraine say about 3% annual interest under Article 625 of the Civil Code when a state body pays late?",
+            "tools_triggered": "search_positions",
+            "expected_behavior": "Returns Supreme Court legal positions on Article 625 of the Civil Code with case numbers, dates and verbatim quotes; states the search verdict."
+          },
+          {
+            "description": "Read a statute article",
+            "prompt": "Show me the text of Article 43 of the Civil Procedure Code of Ukraine.",
+            "tools_triggered": "search_law, law_text",
+            "expected_behavior": "Finds the Civil Procedure Code and quotes Article 43 verbatim from the Verkhovna Rada text, with the act's edition."
+          },
+          {
+            "description": "Judge lookup",
+            "prompt": "Find judges of the Pecherskyi District Court of Kyiv and show statistics for one of them.",
+            "tools_triggered": "judge_search, judge_card",
+            "expected_behavior": "Lists judges of the Pecherskyi District Court of Kyiv and shows a judge card with outcome statistics and the number of analysed decisions."
+          },
+          {
+            "description": "Counterparty check by company code",
+            "prompt": "Check the Ukrainian company with EDRPOU code 00032129: status, director and court cases.",
+            "tools_triggered": "company_search, company_card",
+            "expected_behavior": "Returns the company's register record (name, status, address, director) and a summary of court cases where it appears by name."
+          },
+          {
+            "description": "Verbatim phrase in full texts",
+            "prompt": "Find Supreme Court decisions that contain the exact phrase \"принцип належного урядування\" since 2022.",
+            "tools_triggered": "verbatim_search",
+            "expected_behavior": "Returns Supreme Court decisions containing the exact phrase, sorted by date, each with case number, date and a highlighted snippet."
+          }
+        ],
+        "negative_test_cases": [
+          {
+            "description": "Out of scope: non-Ukrainian law",
+            "prompt": "What is the statute of limitations for breach of contract in California?"
+          },
+          {
+            "description": "Out of scope: unrelated task",
+            "prompt": "Book me a table for two in a restaurant tonight."
+          },
+          {
+            "description": "Unsupported action: filing with a court",
+            "prompt": "File my lawsuit with the court electronically."
+          }
+        ]
+      }
+    }
+  }
+}

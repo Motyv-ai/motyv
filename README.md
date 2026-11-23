@@ -1,4 +1,4 @@
-# Motyv для Claude Code
+# Motyv для Claude Code і Gemini CLI
 
 Плагін підключає [Motyv](https://motyv.ai) до Claude Code: судова практика України
 (правові позиції Верховного Суду й апеляції з цитатами, рішення всіх судів із реєстру,
@@ -17,6 +17,15 @@ claude plugin install motyv@motyv
 Під час першого звернення до Motyv відкриється браузер для входу у ваш акаунт Motyv
 (OAuth). Паролів і ключів плагін не зберігає. Потрібен акаунт на [motyv.ai](https://motyv.ai) —
 пробний період безкоштовний.
+
+## Gemini CLI
+
+```bash
+gemini extensions install https://github.com/Motyv-ai/claude-plugin
+```
+
+Розширення (`gemini-extension.json`) підключає той самий MCP-сервер і скіл `skills/motyv`.
+Вхід у Motyv — так само через браузер (OAuth) під час першого звернення.
 
 ## Що всередині
 
